@@ -52,8 +52,8 @@
 			max-width: 400px;
 		}
 
-		#home-wrapper .logo-container{
-
+		#home-wrapper {
+	        display: none;
 		}
 
 		#home-wrapper svg{
@@ -63,9 +63,13 @@
 		}
 		#home-wrapper p{
 			color: #fff;
-			animation: fadeIn 5s ease-in forwards;
+			opacity: 0;
 		}
-
+		#home-wrapper .anime p, 
+		#home-wrapper .tagline .anime, 
+		#home-wrapper .anime button  {
+			animation: fadeIn 200ms 5.3s ease-out forwards;
+		}
 		#home-wrapper button a:hover{
 			text-decoration: none;
 
@@ -94,6 +98,16 @@
 			border-radius: 50%;
 			overflow: hidden;
 		}
+		#home-wrapper svg .st0{
+	        stroke-width: .1em;
+	        fill:transparent;
+	        stroke: #fff;
+        }
+
+        #home-wrapper .anime .st0 {
+	        animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;        	
+        }
+
 		/************************/
 		/******** Footer ********/
 		footer ul{
@@ -106,16 +120,6 @@
 			text-align: center;
 		}
 
-		#home-wrapper svg .st0{
-	        stroke-width: .1em;
-	        stroke-dasharray: 160;
-	        fill:transparent;
-	        stroke: #fff;
-        }
-
-        #home-wrapper .anime .st0 {
-	        animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;        	
-        }
       @keyframes draw {
           0%{
             stroke-dashoffset:100%;
@@ -182,9 +186,13 @@
 				</svg>
 				<p class="text-right" style="font-size: 20px;">Get, Set, &lt;/code&gt;&nbsp;!</p>
 	    	</div>
-	    	<p class="text-right"><strong>Prepare yourself and come join us for this exciting competition.</strong></p>
+	    	<div class="tagline">
+	    		<p class="text-right"><strong>Prepare yourself and come join us for this exciting competition.</strong></p>
+	    	</div>
 			<!-- <p class="text-center">It's time for all the coders out there to feel the excitement. <b>codingHub</b>, a <b>National Level Coding Competition</b> is delightful playground for the exploration of intelligence of programmers by analyzing real-life problems and using those skills to solve them. It is designed to test your programming skills and logical thinking that is held in two phases.<br><br> -->
-			<button id="go-btn"	class="btn btn-lg center-block" style="transition: all 0.3s">Go</button>
+			<div id="go-btn">
+				<button class="btn btn-lg center-block" style="opacity: 0;"><span>Go</span></button>
+			</div>
 		</div>
 	</div>
 	
@@ -578,7 +586,32 @@
 				);
 
 				//landing page loading stuff
-				$('#landing-page #home-wrapper svg').addClass('anime');
+				$(window).load(
+					function(){
+						function fn(){
+							target = this;
+							setTimeout(
+								function(){
+									console.log(target);
+								},
+								700);
+						}
+
+						setTimeout(
+							function() {
+								$('#home-wrapper').css('display','block');
+								$children = $('#landing-page #home-wrapper').children();
+								$children.each( (i, val) => {
+										setTimeout(function(i){
+											$(val).addClass("anime");
+											},
+										i*700);
+									}
+								);
+							}
+						);
+					}
+				);
 
 				//navigation custom active class
 				$('#main-navbar li').on('click',
@@ -586,11 +619,14 @@
 						if (!$(this).hasClass('active')){
 							$('#main-navbar li.active').removeClass('active').children('span').remove();
 							$(this).addClass('active').append('<span class="sr-only">(current)</span>');
+							$target = $(this).children('a').attr('href');
+							$('html, body').animate({scrollTop: $($target).offset().top -100 }, 'slow');
+							$('.navbar-toggle').click();
 						}
 					}
 				);
 			}
-			);
+		);
 	</script>
 
 	<script>
