@@ -41,7 +41,7 @@
 		}
 
 		#home-wrapper{
-			max-width: 60%;
+			max-width: 80%;
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -53,19 +53,25 @@
 		}
 
 		#home-wrapper .logo-container{
-			padding: 10px;
+
 		}
 
 		#home-wrapper svg{
+			display: block;
+			min-width: 300px;
 			max-width: 640px;
 		}
 		#home-wrapper p{
 			color: #fff;
+			animation: fadeIn 5s ease-in forwards;
 		}
 
 		#home-wrapper button a:hover{
 			text-decoration: none;
 
+		}
+		.logo-container{
+			display: block;
 		}
 
 		/***********************************/
@@ -105,7 +111,10 @@
 	        stroke-dasharray: 160;
 	        fill:transparent;
 	        stroke: #fff;
-	        animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;
+        }
+
+        #home-wrapper .anime .st0 {
+	        animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;        	
         }
       @keyframes draw {
           0%{
@@ -122,6 +131,15 @@
           100%{
             fill:#fff;
           }
+        }
+
+        @keyframes fadeIn{
+        	from {
+        		opacity: 0;
+        	}
+        	to{
+        		opacity: 1;
+        	}
         }
 	</style>
 
@@ -143,7 +161,7 @@
 	<div id="landing-page">
 		<div id="home-wrapper" class="center-block">
 	    	<div class="logo-container">
-	    		<svg viewBox ="0 0 570 180" version="1.1">
+	    		<svg viewBox ="25 25 520 120" version="1.1">
 				   	<g>
 						<g>
 							<g id="g14">
@@ -162,9 +180,10 @@
 						</g>
 					</g>
 				</svg>
-				<p class="text-right" style="margin-top: -70px; margin-right: 70px;font-size: 20px;">Get, Set, &lt;/code&gt;&nbsp;!</p>
+				<p class="text-right" style="font-size: 20px;">Get, Set, &lt;/code&gt;&nbsp;!</p>
 	    	</div>
-			<p class="text-center">It's time for all the coders out there to feel the excitement. <b>codingHub</b>, a <b>National Level Coding Competition</b> is delightful playground for the exploration of intelligence of programmers by analyzing real-life problems and using those skills to solve them. It is designed to test your programming skills and logical thinking that is held in two phases.<br><br><strong> Prepare yourself and come join us for this exciting competition.</strong></p>
+	    	<p class="text-right"><strong>Prepare yourself and come join us for this exciting competition.</strong></p>
+			<!-- <p class="text-center">It's time for all the coders out there to feel the excitement. <b>codingHub</b>, a <b>National Level Coding Competition</b> is delightful playground for the exploration of intelligence of programmers by analyzing real-life problems and using those skills to solve them. It is designed to test your programming skills and logical thinking that is held in two phases.<br><br> -->
 			<button id="go-btn"	class="btn btn-lg center-block" style="transition: all 0.3s">Go</button>
 		</div>
 	</div>
@@ -557,6 +576,9 @@
 						$('#landing-page').slideUp(1200);
 					}
 				);
+
+				//landing page loading stuff
+				$('#landing-page #home-wrapper svg').addClass('anime');
 
 				//navigation custom active class
 				$('#main-navbar li').on('click',
