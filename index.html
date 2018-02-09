@@ -241,6 +241,31 @@
 	fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href=""><img src="./img/logo.png" style="height:50px;padding: 10px;" alt="c{}ding hub" class="img-responsive"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="main-navbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active"><a href="index.html">Home</a><span class="sr-only">(current)</span></li>
+					<li><a href="#register">Register</a></li>
+					<li><a href="#faq">FAQ's</a></li>
+					<li><a href="#about_us">About Us</a></li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+	
+
 	<!-- home -->
 	<div id="landing-page">
 		<div id="home-wrapper" class="center-block">
@@ -279,79 +304,64 @@
 			<!-- <p class="text-center">It's time for all the coders out there to feel the excitement. <b>codingHub</b>, a <b>National Level Coding Competition</b> is delightful playground for the exploration of intelligence of programmers by analyzing real-life problems and using those skills to solve them. It is designed to test your programming skills and logical thinking that is held in two phases.<br><br> -->
 			<div id="go-btn">
 				<button class="btn btn-lg center-block" style="opacity: 0;"><span>Go</span></button>
+	
 			</div>
 		</div>
 	</div>
 	
 	
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
-					<span class="sr-only">Toggle Navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href=""><img src="logo.png" alt="c{}ding hub" class="img-responsive"></a>
-			</div>
-			<div class="collapse navbar-collapse" id="main-navbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li class="active"><a href="index.html">Home</a><span class="sr-only">(current)</span></li>
-					<li><a href="#register">Register</a></li>
-					<li><a href="#faq">FAQ's</a></li>
-					<li><a href="#about_us">About Us</a></li>
-				</ul>
-			</div>
-
-		</div>
-	</nav>
 	
 	<!-- register -->
 	<div id="register" class="container" style="margin-top: 100px;">
 		<!-- Write something, how the contest will progress -->
-		<h2>Register</h2>
-		<hr>		
-		<div class="col-sm-4 col-xs-12">
-			<p>The contest consists of two rounds.</p>
-			<p>The first round will be progressing online on Hackerearth's platform and the second round will take place in the college campus.</p>
-			<p>In the first round there are <b>Five questions</b> out of which the participant will have to attempt <b>atleast one</b>.</p>
-		<br>
-		</div>
-		<div class="col-sm-4  col-xs-12">
-			<p>Each question is alloted 100 marks. Marks will be awarded on basis of number of test input passed by the algorithm, in given time constraint.</p>
-			<p>Full marks may be awarded if the problem is solved completely and/or optimally.</p>
-		<br>
-		</div>
-		<div class="col-sm-4  col-xs-12">
-		<div class="fb-page" data-href="https://www.facebook.com/codinghub2k18" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/codinghub2k18" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/codinghub2k18">Codinghub</a></blockquote></div>
-		</div>
-	</div>
-
-	<!-- Timer -->
-	<div id="timer">
-		<div class="container text-center">
-			<h1>Countdown</h1>
-			<div id="clockdiv">
-				<div>
-					<span class="days"></span>
-					<div class="smalltext">Days</div>
+		<div class="row">
+			<div class="container">
+				<h2>Register</h2>
+				<hr>		
+				<div class="col-sm-4 col-xs-12">
+					<p>The contest consists of two rounds.</p>
+					<p>The first round will be progressing online on Hackerearth's platform and the second round will take place in the college campus.</p>
+					<p>In the first round there are <b>Five questions</b> out of which the participant will have to attempt <b>atleast one</b>.</p>
+				<br>
 				</div>
-				<div>
-					<span class="hours"></span>
-					<div class="smalltext">Hours</div>
+				<div class="col-sm-4  col-xs-12">
+					<p>Each question is alloted 100 marks. Marks will be awarded on basis of number of test input passed by the algorithm, in given time constraint.</p>
+					<p>Full marks may be awarded if the problem is solved completely and/or optimally.</p>
+				<br>
 				</div>
-				<div>
-					<span class="minutes"></span>
-					<div class="smalltext">Minutes</div>
-				</div>
-				<div>
-					<span class="seconds"></span>
-					<div class="smalltext">Seconds</div>
+				<div class="col-sm-4  col-xs-12">
+				<div class="fb-page" data-href="https://www.facebook.com/codinghub2k18" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/codinghub2k18" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/codinghub2k18">Codinghub</a></blockquote></div>
 				</div>
 			</div>
 		</div>
+		<!-- Timer -->
+		<div class="row">
+			<div id="timer">
+			<div class="container text-center">
+				<h1>Countdown</h1>
+				<div id="clockdiv">
+					<div>
+						<span class="days"></span>
+						<div class="smalltext">Days</div>
+					</div>
+					<div>
+						<span class="hours"></span>
+						<div class="smalltext">Hours</div>
+					</div>
+					<div>
+						<span class="minutes"></span>
+						<div class="smalltext">Minutes</div>
+					</div>
+					<div>
+						<span class="seconds"></span>
+						<div class="smalltext">Seconds</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
 	</div>
+
 
 
 
