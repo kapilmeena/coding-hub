@@ -37,6 +37,7 @@
 			height: 100%;
 			position: fixed;
 			top: 0px;
+			left: 0px;
 			z-index: 9999;
 			background: url('./img/bg.jpg') no-repeat 50% 50% ;
 			background-size: cover;
@@ -121,6 +122,45 @@
 	                animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;        	
         }
 
+		/************************/
+		/******** Timer ********/
+		#timer{
+			padding:20px; 
+		}
+		#timer h1{
+		  color: #396;
+		  font-weight: 100;
+		  font-size: 40px;
+		  margin: 20px 0px;
+		}
+
+		#timer #clockdiv{
+			font-family: sans-serif;
+			color: #fff;
+			display: inline-block;
+			font-weight: 100;
+			text-align: center;
+			font-size: 30px;
+		}
+
+		#timer #clockdiv > div{
+			padding: 10px;
+			border-radius: 3px;
+			background: #00BF96;
+			display: inline-block;
+		}
+
+		#timer #clockdiv div > span{
+			padding: 15px;
+			border-radius: 3px;
+			background: #00816A;
+			display: inline-block;
+		}
+
+		#timer .smalltext{
+			padding-top: 5px;
+			font-size: 16px;
+}
 		/************************/
 		/******** Footer ********/
 		footer ul{
@@ -243,6 +283,7 @@
 		</div>
 	</div>
 	
+	
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -266,16 +307,12 @@
 		</div>
 	</nav>
 	
-
-	<!-- Timer -->
-
 	<!-- register -->
 	<div id="register" class="container" style="margin-top: 100px;">
 		<!-- Write something, how the contest will progress -->
 		<h2>Register</h2>
 		<hr>		
 		<div class="col-sm-4 col-xs-12">
-			<h3></h3>
 			<p>The contest consists of two rounds.</p>
 			<p>The first round will be progressing online on Hackerearth's platform and the second round will take place in the college campus.</p>
 			<p>In the first round there are <b>Five questions</b> out of which the participant will have to attempt <b>atleast one</b>.</p>
@@ -290,6 +327,33 @@
 		<div class="fb-page" data-href="https://www.facebook.com/codinghub2k18" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/codinghub2k18" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/codinghub2k18">Codinghub</a></blockquote></div>
 		</div>
 	</div>
+
+	<!-- Timer -->
+	<div id="timer">
+		<div class="container text-center">
+			<h1>Countdown</h1>
+			<div id="clockdiv">
+				<div>
+					<span class="days"></span>
+					<div class="smalltext">Days</div>
+				</div>
+				<div>
+					<span class="hours"></span>
+					<div class="smalltext">Hours</div>
+				</div>
+				<div>
+					<span class="minutes"></span>
+					<div class="smalltext">Minutes</div>
+				</div>
+				<div>
+					<span class="seconds"></span>
+					<div class="smalltext">Seconds</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 	<br>
 
@@ -618,11 +682,14 @@
 	</footer>
 
 	<script
-  src="https://code.jquery.com/jquery-1.12.4.min.js"
-  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-  crossorigin="anonymous"></script>
+	  src="https://code.jquery.com/jquery-1.12.4.min.js"
+	  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+	  crossorigin="anonymous"></script>
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  	<script 
+  	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+  	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+  	crossorigin="anonymous"></script>
 
 	<script>
 		//jQuery Stuff
@@ -661,7 +728,7 @@
 							$('#main-navbar li.active').removeClass('active').children('span').remove();
 							$(this).addClass('active').append('<span class="sr-only">(current)</span>');
 							$target = $(this).children('a').attr('href');
-							$('html, body').animate({scrollTop: $($target).offset().top -100 }, 'slow');
+							$('html, body').animate({scrollTop: $($target).offset().top -100 }, 'ease-out');
 							$('.navbar-toggle').click();
 						}
 					}
@@ -672,13 +739,58 @@
 
 	<script>
 		//Javascript Stuff
-		let paths = document.querySelectorAll('#home-wrapper svg path');
-		paths.forEach(
-			function( path ){
-				path.style.strokeDasharray = path.getTotalLength();
+		(function(){
+			let paths = document.querySelectorAll('#home-wrapper svg path');
+			paths.forEach(
+				function( path ){
+					path.style.strokeDasharray = path.getTotalLength();
+				}
+				);
+		})();
+
+
+		//timer-js
+		function getTimeRemaining(endtime) {
+			var t = Date.parse(endtime) - Date.parse(new Date());
+			var seconds = Math.floor((t / 1000) % 60);
+			var minutes = Math.floor((t / 1000 / 60) % 60);
+			var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+			var days = Math.floor(t / (1000 * 60 * 60 * 24));
+			return {
+				'total': t,
+			    'days': days,
+			    'hours': hours,
+			    'minutes': minutes,
+			    'seconds': seconds
+			};
+		}
+
+		function initializeClock(id, endtime) {
+			var clock = document.getElementById(id);
+			var daysSpan = clock.querySelector('.days');
+			var hoursSpan = clock.querySelector('.hours');
+			var minutesSpan = clock.querySelector('.minutes');
+			var secondsSpan = clock.querySelector('.seconds');
+
+			function updateClock() {
+				var t = getTimeRemaining(endtime);
+
+				daysSpan.innerHTML = t.days;
+				hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+				minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+				secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+				if (t.total <= 0) {
+					clearInterval(timeinterval);
+				}
 			}
-		);
+
+			updateClock();
+			var timeinterval = setInterval(updateClock, 1000);
+		}
+
+		var deadline = new Date(2018, 1, 22);
+		initializeClock('clockdiv', deadline);
 	</script>
-	<!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script> -->
 </body>
 </html>
