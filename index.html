@@ -23,6 +23,7 @@
 		/***********************************/
 		/************* Navbar Css **********/
 		#main-navbar ul li a{
+			-webkit-transition: all 0.4s ease-in;
 			transition: all 0.4s ease-in;
 		} 
 
@@ -47,7 +48,8 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%,-50%);
+			-webkit-transform: translate(-50%,-50%);
+			        transform: translate(-50%,-50%);
 		}
 
 		#home-wrapper .svg-container{
@@ -62,7 +64,8 @@
 			display: block;
 			min-width: 300px;
 			max-width: 640px;
-			filter:url(#filterSVG);
+			-webkit-filter:url(#filterSVG);
+			        filter:url(#filterSVG);
 		}
 		#home-wrapper p{
 			color: #fff;
@@ -71,7 +74,8 @@
 		#home-wrapper .anime p, 
 		#home-wrapper .tagline .anime, 
 		#home-wrapper .anime button  {
-			animation: fadeIn 200ms 5.3s ease-out forwards;
+			-webkit-animation: fadeIn 200ms 5.3s ease-out forwards;
+			        animation: fadeIn 200ms 5.3s ease-out forwards;
 		}
 		#home-wrapper button a:hover{
 			text-decoration: none;
@@ -86,11 +90,15 @@
 		#about_us .card{
 			padding: 20px 0px;
 			border-radius: 4px;
+			-webkit-transition: all 0.8s ease-in-out;
 			transition: all 0.8s ease-in-out;
 		}
 		#about_us .card:hover{
-			transform: translate(0px,10px);
-			box-shadow: 8px 8px 12px 5px #d7d7d7 ;
+			-webkit-transform: translate(0px,10px);
+			        transform: translate(0px,10px);
+			-webkit-box-shadow: 8px 8px 12px 5px #d7d7d7 ;
+			        box-shadow: 8px 8px 12px 5px #d7d7d7 ;
+			-webkit-transition: all 0.3s ease-in-out;
 			transition: all 0.3s ease-in-out;
 		}
 
@@ -108,7 +116,9 @@
         }
 
         #home-wrapper .anime .st0 {
-	        animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;        	
+        	stroke-dashoffset:100%; 
+	        -webkit-animation: draw 4s linear forwards, glow 1s 3.6s linear forwards; 
+	                animation: draw 4s linear forwards, glow 1s 3.6s linear forwards;        	
         }
 
 		/************************/
@@ -123,6 +133,15 @@
 			text-align: center;
 		}
 
+		@-webkit-keyframes draw {
+			0%{
+				stroke-dashoffset:100%;
+			}
+			100%{
+				stroke-dashoffset:0%;
+			}
+        }
+
 		@keyframes draw {
 			0%{
 				stroke-dashoffset:100%;
@@ -131,12 +150,29 @@
 				stroke-dashoffset:0%;
 			}
         }
+		@-webkit-keyframes glow {
+			0%{
+				fill: transparent;
+			}
+			100%{
+				fill:#fff;
+			}
+		}
 		@keyframes glow {
 			0%{
 				fill: transparent;
 			}
 			100%{
 				fill:#fff;
+			}
+		}
+
+		@-webkit-keyframes fadeIn{
+			from {
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
 			}
 		}
 
@@ -234,19 +270,24 @@
 	<!-- Timer -->
 
 	<!-- register -->
-	<div id="register" class="container" style="font-family: Open Sans">
-		<div class=" row" style="margin-top: 100px;">
-			<!-- Write something, how the contest will progress -->
-			<div class="col-sm-4 col-xs-12">
-				The contest consists of two rounds. The first round will be progressing online on Hackerearth's platform and the second round will take place in the college campus.In the first round there are <b>Five questions</b> out of which the participant will have to attempt <b>atleast one</b>.
-			</div>
-			<div class="col-sm-4  col-xs-12">
-				Each question consists of <b>100 </b>marks, apart of which will be awarded on the basis of <b>the number of inputs</b>,<b>of an optimally solved algorithm, checked within the given time constraint and/or if the problem is partially solved</b>.
-				Full marks may be awarded if the problem is solved completely and/or optimally.
-			</div>
-			<div class="col-sm-4  col-xs-12">
-			<div class="fb-page" data-href="https://www.facebook.com/codinghub2k18" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/codinghub2k18" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/codinghub2k18">Codinghub</a></blockquote></div>
-			</div>
+	<div id="register" class="container" style="margin-top: 100px;">
+		<!-- Write something, how the contest will progress -->
+		<h2>Register</h2>
+		<hr>		
+		<div class="col-sm-4 col-xs-12">
+			<h3></h3>
+			<p>The contest consists of two rounds.</p>
+			<p>The first round will be progressing online on Hackerearth's platform and the second round will take place in the college campus.</p>
+			<p>In the first round there are <b>Five questions</b> out of which the participant will have to attempt <b>atleast one</b>.</p>
+		<br>
+		</div>
+		<div class="col-sm-4  col-xs-12">
+			<p>Each question is alloted 100 marks. Marks will be awarded on basis of number of test input passed by the algorithm, in given time constraint.</p>
+			<p>Full marks may be awarded if the problem is solved completely and/or optimally.</p>
+		<br>
+		</div>
+		<div class="col-sm-4  col-xs-12">
+		<div class="fb-page" data-href="https://www.facebook.com/codinghub2k18" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/codinghub2k18" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/codinghub2k18">Codinghub</a></blockquote></div>
 		</div>
 	</div>
 
