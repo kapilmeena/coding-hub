@@ -34,23 +34,15 @@ $(document).ready(
                     $('#main-navbar li.active').removeClass('active').children('span').remove();
                     $(this).addClass('active').append('<span class="sr-only">(current)</span>');
                     target = $(this).children('a').attr('href');
+                    $('html, body').animate({
+                        scrollTop:$(target).offset().top
+                    }, 500);
                     $('.navbar-toggle').click();
                 }
             }
         );
     }
 );
-
-//Javascript Stuff
-(function() {
-    let paths = document.querySelectorAll('#home-wrapper svg path');
-    paths.forEach(
-        function(path) {
-            path.style.strokeDasharray = path.getTotalLength();
-        }
-    );
-})();
-
 
 //timer-js
 function getTimeRemaining(endtime) {
