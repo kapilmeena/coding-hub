@@ -31,9 +31,9 @@
     </div> 
     <div class="collapse navbar-collapse" id="main-navbar"> 
      <ul class="nav navbar-nav navbar-right"> 
-      <li><a href="index.html">Home</a></li> 
-      <li class="active"><a href="#register">Register</a><span class="sr-only">(current)</span></li> 
-      <li><a href="#faq">FAQ's</a></li> 
+      <!-- <li><a href="index.html">Home</a></li>  -->
+      <!-- <li class="active"><a href="#register">Register</a><span class="sr-only">(current)</span></li>  -->
+      <!-- <li><a href="#faq">FAQ's</a></li>  -->
       <li><a href="#about_us">About Us</a></li> 
      </ul> 
     </div> 
@@ -42,7 +42,7 @@
   <!-- home --> 
   <section id="landing-page" style="margin-top: 0px;"> 
    <div id="home-wrapper" class="center-block"> 
-    <div cla="" ss="logo-container"> 
+    <div class="logo-container"> 
      <svg viewbox="24 25 520 120" version="1.1"> 
       <g> 
        <g id="coding"> 
@@ -61,8 +61,8 @@
        </g> 
       </g> 
      </svg> 
-     <p class="text-right" style="font-size: 20px;">Get, Set, &lt;/code&gt;&nbsp;!</p> 
     </div> 
+     <p class="text-right" style="font-size: 20px;">Get, Set, &lt;/code&gt;&nbsp;!</p> 
     <div class="tagline"> 
      <p class="text-right"><strong>Prepare yourself and come join us for this exciting competition.</strong></p> 
     </div> 
@@ -72,15 +72,15 @@
    </div> 
   </section>
   <!-- JumboTron --> 
-  <div class="jumbotron hidden-xs"> 
-   <div class="container text-center"> 
-    <p>Competitive programming is a mind sport, involving participants trying to program according to provided specifications. This programming competition involves the host presenting a set of logical or mathematical problems to the contestants, and contestants are required to write computer programs capable of solving each problem. Judging is based mostly upon number of problems solved and time spent for writing successful solutions.</p> 
-    <p>The aim of competitive programming is to write source code of computer programs which are able to solve given problems. These tasks may belong to one of the following categories: combinatorics, number theory, graph theory, geometry, string analysis and data structures.</p> 
-    <p>It's time for all the coders out there to feel the excitement. <b>codingHub</b>, a <b>National Level Coding Competition</b> is delightful playground for the exploration of intelligence of programmers by analyzing real-life problems and using those skills to solve them. It is designed to test your programming skills and logical thinking that is held in two phases.</p> 
+  <div class="announcement"> 
+   <div class="container-fluid text-center"> 
+    <h2><b>Phase-I is over..</b></h2>
+    <p class="lead"><b>Thanks for participating. <small><p>Qualified participants have been sent an invitation for On-site finals via E-mails &amp; SMS</p></small></b></p>
+    <br>
    </div> 
   </div> 
   <!-- register --> 
-  <div id="register" class="container"> 
+  <!-- <div id="register" class="container"> 
    <div class="row"> 
     <div class="container"> 
      <h2 class="text-center">REGISTER</h2> 
@@ -115,11 +115,11 @@
      </div> 
      <div class="col-sm-4  col-xs-12"> 
       <div>
-       <a target="_blank"  href="https://www.hackerearth.com/challenge/college/codinghub2K18/"><button class="center-block btn btn-lg btn-primary">Register</button></a>
+       <a target="_blank"  href="https://www.hackerearth.com/challenge/college/codinghub2K18/"><button class="center-block btn btn-lg btn-primary disabled">Register</button></a>
       </div> 
       <br /> 
       <div>
-       <a target="_blank"  href="https://docs.google.com/forms/d/e/1FAIpQLSeYpAMHGwbKeaMOnHW62EyNTNK_d0pK2y_M40UCYkW0gskM3A/viewform?usp=sf_link"><button class="center-block btn btn-lg btn-primary">Fill Google Form</button></a> 
+       <a target="_blank"  href="https://docs.google.com/forms/d/e/1FAIpQLSeYpAMHGwbKeaMOnHW62EyNTNK_d0pK2y_M40UCYkW0gskM3A/viewform?usp=sf_link"><button class="center-block btn btn-lg btn-primary disabled">Fill Google Form</button></a> 
        <br /> 
       </div>
       <div class="fb-page" data-href="https://www.facebook.com/codinghub2k18" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
@@ -130,45 +130,65 @@
      </div> 
     </div> 
    </div> 
-   <!-- Timer --> 
-   <div class="row"> 
-    <div id="timer"> 
-     <div class="container text-center"> 
-      <div id="clockdiv"> 
-       <div> 
-        <span class="days"></span> 
-        <div class="smalltext">
-         Days
-        </div> 
-       </div> 
-       <div> 
-        <span class="hours"></span> 
-        <div class="smalltext">
-         Hours
-        </div> 
-       </div> 
-       <div> 
-        <span class="minutes"></span> 
-        <div class="smalltext">
-         Minutes
-        </div> 
-       </div> 
-       <div> 
-        <span class="seconds"></span> 
-        <div class="smalltext">
-         Seconds
-        </div> 
-       </div> 
+   <br /> 
+   <br /> 
+   <br /> 
+  </div>  -->
+  <!-- Timer --> 
+  <div class="container-fluid"><div class="row"> 
+      <div class="col-sm-5">
+          <div id="timer">
+              <h2 class="text-center">Finale on 09<sup>th</sup>&nbsp;March!!</h2><br> 
+             <div class="text-center"> 
+              <div id="clockdiv"> 
+               <div> 
+                <span class="days"></span> 
+                <div class="smalltext">
+                 Days
+                </div> 
+               </div> 
+               <div> 
+                <span class="hours"></span> 
+                <div class="smalltext">
+                 Hours
+                </div> 
+               </div> 
+               <div> 
+                <span class="minutes"></span> 
+                <div class="smalltext">
+                 Minutes
+                </div> 
+               </div> 
+               <div> 
+                <span class="seconds"></span> 
+                <div class="smalltext">
+                 Seconds
+                </div> 
+               </div> 
+              </div> 
+             </div> 
+            </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="payment">
+          <div class="col-sm-6">
+              <h2>Qualified?</h2>
+              <div class="text-left"></div>
+                <p>-Pay the registration fee and make sure to <b>Note down the transaction id</b> </p>
+                <p>-Prepare for Finale &amp;</p>
+                <p class="lead"><b>Win 30,000/-<sup>*</sup></b></p>
+          </div>
+          <div class="col-sm-6">
+            <div class="center-block">
+                <img class="img-responsive" src="img/phonepe.png" alt="phonePe">
+                <p style="margin:0;text-align:center;"><b>PhonePe</b></p>
+            </div>
+          </div>
+        </div>
       </div> 
      </div> 
-    </div> 
-   </div> 
-   <br /> 
-   <br /> 
-   <br /> 
-  </div> 
-  <!-- FAQ's --> 
-  <div id="faq" class="container"> 
+     <!-- FAQ's --> 
+    </div>  <!-- <div id="faq" class="container"> 
    <h2 class="text-center">FAQ's</h2> 
    <hr /> 
    <ul> 
@@ -177,7 +197,8 @@
       <li><p>Write code in the online code editor that is provided with each problem or upload the source and submit it.</p></li> 
       <li><p>Instructions for each problem differ</p></li> 
       <li><p>You can make multiple submissions. The platform automatically considers the best submission.</p></li> 
-     </ul> </li>  
+     </ul>
+   </li>  
     <li><p>Phase-II</p> 
      <ul> 
       <li><p>Write code in the provided code editor, generate output and submit it.</p></li> 
@@ -256,8 +277,13 @@
    </div> 
      <h3>Still have doubts, Contact Us!!</h3> 
      <p>Email us @&nbsp;<a href="mailto:codinghubcse@gmail.com">codingHUB</a>&nbsp;or connect to our facebook page @&nbsp;<a target="new" href="https://www.facebook.com/codinghub2k18/">C{}ding HUB.</a></p> 
-  </div> 
-  <!-- About --> 
+  </div>  -->
+  <!-- About -->
+  <div class="container-fluid text-center" style="padding-top:40px;">
+      <h1>Here we are!!</h1>  
+      <div style="padding:20px;"><iframe height="450" frameborder="0.5" style="border-radius:10px;width:100%;" 
+        src="https://www.google.com/maps/embed/v1/place?q=T.I.T%20Group%20of%20Institutions%2C%20Anand%20Nagar%2C%20Opp.%20Hathaikheda%20Dam%2C%20BHEL%2C%20Bhopal%2C%20Madhya%20Pradesh%20462021&key=AIzaSyAT8NLODu-oTU97gsBk0nIEQBlhkovKLTw" allowfullscreen></iframe></div>
+  </div>
   <div id="about_us" class="container"> 
    <h2 class="text-center">ABOUT US</h2>
    <br /> 
@@ -348,10 +374,10 @@
   <footer> 
    <div class="container"> 
     <ul> 
-     <li><a href="index.html">Home</a></li> 
-     <li><a href="#register">Register</a></li> 
-     <li><a href="#faq">FAQ's</a></li> 
-     <li><a href="#about_us">About Us</a></li> 
+     <li><a href="#">Home</a></li> 
+     <li><a href="#">Register</a></li> 
+     <li><a href="#">FAQ's</a></li> 
+     <li><a href="#">About Us</a></li> 
     </ul> 
     <p class="text-center" style="padding: 20px;margin-top: 10px;"> Made with <span class="glyphicon glyphicon-heart"><span class="sr-only">LOve</span></span>&nbsp;by- <a href="https://www.fb.com/yadav.anshumaan">Anshumaan Yadav</a> </p> 
    </div> 
